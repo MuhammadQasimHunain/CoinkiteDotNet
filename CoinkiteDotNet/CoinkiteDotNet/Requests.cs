@@ -21,23 +21,15 @@ namespace CoinkiteDotNet
                     string sig;
                     string tstamp;
 
-                    Dictionary<string, string> signature = Helpers.sign(endpoint, api_secret);
+                    foreach(Header header in Helpers.sign(endpoint, api_secret))
+                    {
+                        headers.Add(header);
+                    }
 
                     client.BaseAddress = new Uri("https://api.coinkite.com");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
                     client.DefaultRequestHeaders.Add("X-CK-Key", api_key);
-
-                    if (signature.TryGetValue("signature", out sig))
-                    {
-                        client.DefaultRequestHeaders.Add("X-CK-Sign", sig);
-                    }
-
-                    if (signature.TryGetValue("timestamp", out tstamp))
-                    {
-                        client.DefaultRequestHeaders.Add("X-CK-Timestamp", tstamp);
-                    }
 
                     foreach (Header header in headers)
                     {
