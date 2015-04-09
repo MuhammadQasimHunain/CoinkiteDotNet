@@ -20,5 +20,15 @@ namespace CoinkiteDotNet
 
             return toReturn;
         }
+
+        public static int toSatoshi(decimal btc)
+        {
+            return Convert.ToInt32(btc * 10000000);
+        }
+
+        public static decimal toBtc(int satoshi)
+        {
+            return Convert.ToDecimal(satoshi/10000000);
+        }
     }
 }
