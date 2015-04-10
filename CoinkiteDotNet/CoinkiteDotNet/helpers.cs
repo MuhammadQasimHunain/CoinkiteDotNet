@@ -11,12 +11,17 @@ namespace CoinkiteDotNet
     {
         public static List<Header> sign(string endpoint, string api_secret)
         {
-            var timestamp = Convert.ToString((Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds);
+            var timestamp = DateTime.UtcNow.ToString("s", System.Globalization.CultureInfo.InvariantCulture);
+
             var data = endpoint + "|" + timestamp;
 
             string hash = Crypto.HMACSha256(api_secret, data);
 
-            List<Header> toReturn = new List<Header> { new Header{Name = "X-CK-Timestamp",Data = timestamp}, new Header{Name = "X-CK-Sign", Data = hash} };
+            Header htstamp = new Header { Name = "X-CK-Timestamp", Data = timestamp };
+            Header hsign = new Header { Name = "X-CK-Sign", Data = hash };
+            List<Header> toReturn = new List<Header> {};
+            toReturn.Add(htstamp);
+            toReturn.Add(hsign);
 
             return toReturn;
         }

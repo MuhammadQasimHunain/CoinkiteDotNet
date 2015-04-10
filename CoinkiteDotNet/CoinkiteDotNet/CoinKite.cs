@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,6 +16,14 @@ namespace CoinkiteDotNet
         {
             this.api_key = api_key;
             this.api_secret = api_secret;
+        }
+
+        public string self()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/self", api_key, api_secret);
+
+            string resultString = result.Content.ReadAsStringAsync().Result;
+            return resultString;
         }
     }
 }
