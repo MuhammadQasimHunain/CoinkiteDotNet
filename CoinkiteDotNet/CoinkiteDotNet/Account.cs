@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoinkiteDotNet
 {
-    class Header
+    class Account
     {
-        public string Name { get; set; }
-        public string Data { get; set; }
     }
-
-
 }

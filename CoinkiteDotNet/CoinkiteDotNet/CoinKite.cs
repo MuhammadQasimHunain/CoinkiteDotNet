@@ -16,5 +16,6 @@ namespace CoinkiteDotNet
             this.api_key = api_key;
             this.api_secret = api_secret;
         }
+
     }
 }

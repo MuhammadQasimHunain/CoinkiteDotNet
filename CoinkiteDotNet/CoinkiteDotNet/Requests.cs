@@ -6,37 +6,35 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Net;
 
 
 namespace CoinkiteDotNet
 {
     class Requests
     {
-        async Task<HttpResponseMessage> sendRequest(List<Header> headers, string endpoint, string api_key, string api_secret)
+        public static string sendRequest(List<Header> headers, string endpoint, string api_key, string api_secret)
         {
             try
             {
-                using (var client = new HttpClient())
+                using (var client = new WebClient())
                 {
-                    string sig;
-                    string tstamp;
-
+                    
                     foreach(Header header in Helpers.sign(endpoint, api_secret))
                     {
                         headers.Add(header);
                     }
 
-                    client.BaseAddress = new Uri("https://api.coinkite.com");
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Add("X-CK-Key", api_key);
+                    client.BaseAddress = "https://api.coinkite.com";
+                    client.Headers.Clear();
+                    client.Headers.Add("X-CK-Key", api_key);
 
                     foreach (Header header in headers)
                     {
-                        client.DefaultRequestHeaders.Add(header.Name, header.Data);
+                        client.Headers.Add(header.Name, header.Data);
                     }
 
-                    HttpResponseMessage response = await client.GetAsync(endpoint);
+                    string response = client.DownloadString(endpoint);
 
                     return response;
                     
@@ -48,5 +46,6 @@ namespace CoinkiteDotNet
             }
             
         }
+        
     }
 }
