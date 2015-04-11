@@ -14,3 +14,5 @@ Which can then be used by doing
 
 Once complete this should cover most API functions, including ones related to multi-sig.
 
+Feel free to fork and make pull requests, but the structure may change massively between now and completion.
+
