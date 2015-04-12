@@ -10,5 +10,6 @@ namespace CoinkiteDotNet
     {
         MySelf self();
         ApiKeys apikeys();
+        Accounts accounts();
     }
 }
