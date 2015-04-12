@@ -8,6 +8,7 @@ namespace CoinkiteDotNet
 {
     public interface ICoinKite
     {
-        string self();
+        MySelf self();
+        ApiKeys apikeys();
     }
 }

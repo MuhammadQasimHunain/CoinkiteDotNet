@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace CoinkiteDotNet
 {
@@ -18,12 +19,18 @@ namespace CoinkiteDotNet
             this.api_secret = api_secret;
         }
 
-        public string self()
+        public MySelf self()
         {
             HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/self", api_key, api_secret);
 
-            string resultString = result.Content.ReadAsStringAsync().Result;
-            return resultString;
+            return JsonConvert.DeserializeObject<MySelf>(result.Content.ReadAsStringAsync().Result);
+        }
+
+        public ApiKeys apikeys()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/api_keys", api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<ApiKeys>(result.Content.ReadAsStringAsync().Result);
         }
     }
 }
