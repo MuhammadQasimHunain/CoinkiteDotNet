@@ -60,6 +60,41 @@ namespace CoinkiteDotNet
 
             return JsonConvert.DeserializeObject<Emails>(result.Content.ReadAsStringAsync().Result);
         }
+
+        public Phones phonenumbers()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/phone_numbers", api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<Phones>(result.Content.ReadAsStringAsync().Result);
+        }
+
+        public Invoices invoices()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/invoices", api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<Invoices>(result.Content.ReadAsStringAsync().Result);
+        }
+
+        public Revshares revshares()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/revshare", api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<Revshares>(result.Content.ReadAsStringAsync().Result);
+        }
+
+        public SentEmails sentemails()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/sent_emails", api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<SentEmails>(result.Content.ReadAsStringAsync().Result);
+        }
+
+        public SentTexts sentsms()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/sent_sms", api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<SentTexts>(result.Content.ReadAsStringAsync().Result);
+        }
         //result.Content.ReadAsStringAsync().Result;
     }
 }

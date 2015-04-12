@@ -101,4 +101,89 @@ namespace CoinkiteDotNet
         public Paging paging { get; set; }
         public List<Email> results { get; set; }
     }
+
+    public class Phone
+    {
+        public string CK_refnum { get; set; }
+        public string CK_type { get; set; }
+        public string number { get; set; }
+        public string number_e164 { get; set; }
+    }
+
+    public class Phones
+    {
+        public Paging paging { get; set; }
+        public List<Phone> results { get; set; }
+    }
+
+    public class Invoice
+    {
+        public string CK_refnum { get; set; }
+        public string CK_type { get; set; }
+        public string coin_type { get; set; }
+        public string description { get; set; }
+        public string is_paid { get; set; }
+        public string total { get; set; }
+    }
+
+    public class Invoices
+    {
+        public Paging paging { get; set; }
+        public List<Invoice> results { get; set; }
+    }
+
+    public class Revshare
+    {
+        public string CK_refnum { get; set; }
+        public string CK_type { get; set; }
+        public string is_friend { get; set; }
+        public string is_reseller { get; set; }
+        public string memo { get; set; }
+        public string short_code { get; set; }
+        public string url { get; set; }
+    }
+
+    public class Revshares
+    {
+        public Paging paging { get; set; }
+        public List<Revshare> results { get; set; }
+    }
+
+    public class SentEmail
+    {
+        public string CK_refnum { get; set; }
+        public string CK_type { get; set; }
+        public string template { get; set; }
+        public string to { get; set; }
+        public string public_msg { get; set; }
+        public string failed { get; set; }
+        public string sent_at { get; set; }
+        public string delivered_at { get; set; }
+    }
+
+    public class SentEmails
+    {
+        public Paging paging { get; set; }
+        public List<SentEmail> results { get; set; }
+    }
+
+    public class SentText
+    {
+        public string CK_refnum { get; set; }
+        public string CK_type { get; set; }
+        public string number { get; set; }
+        public string number_e164 { get; set; }
+        public string template { get; set; }
+        public string message_body { get; set; }
+        public string public_msg { get; set; }
+        public string failed { get; set; }
+        public string sent_at { get; set; }
+        public string delivered_at { get; set; }
+    }
+
+    public class SentTexts
+    {
+        public Paging paging { get; set; }
+        public List<SentText> results {get; set;}
+    }
 }

@@ -14,5 +14,10 @@ namespace CoinkiteDotNet
         Accounts allaccounts();
         Cards cards();
         Emails emails();
+        Phones phonenumbers();
+        Invoices invoices();
+        Revshares revshares();
+        SentEmails sentemails();
+        SentTexts sentsms();
     }
 }
