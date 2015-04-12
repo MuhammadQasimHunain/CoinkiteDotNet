@@ -86,4 +86,19 @@ namespace CoinkiteDotNet
         public Paging paging { get; set; }
         public List<Card> results { get; set; }
     }
+
+    public class Email
+    {
+        public string CK_refnum { get; set; }
+        public string CK_type { get; set; }
+        public string address { get; set; }
+        public string priority { get; set; } //I have no clue what type this returns
+        public string verified { get; set; } //nor this
+    }
+
+    public class Emails
+    {
+        public Paging paging { get; set; }
+        public List<Email> results { get; set; }
+    }
 }

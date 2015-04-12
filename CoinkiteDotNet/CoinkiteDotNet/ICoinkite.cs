@@ -12,6 +12,7 @@ namespace CoinkiteDotNet
         ApiKeys apikeys();
         Accounts accounts();
         Accounts allaccounts();
-        string cards();
+        Cards cards();
+        Emails emails();
     }
 }
