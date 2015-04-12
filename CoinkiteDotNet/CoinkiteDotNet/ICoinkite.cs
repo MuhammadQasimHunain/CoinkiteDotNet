@@ -19,5 +19,8 @@ namespace CoinkiteDotNet
         Revshares revshares();
         SentEmails sentemails();
         SentTexts sentsms();
+        Vouchers vouchers();
+        Terminals terminals();
+        Terminals all_terminals();
     }
 }

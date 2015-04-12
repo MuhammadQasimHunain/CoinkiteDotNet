@@ -95,6 +95,27 @@ namespace CoinkiteDotNet
 
             return JsonConvert.DeserializeObject<SentTexts>(result.Content.ReadAsStringAsync().Result);
         }
+
+        public Vouchers vouchers()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/vouchers", api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<Vouchers>(result.Content.ReadAsStringAsync().Result);
+        }
+
+        public Terminals terminals()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/terminals", api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<Terminals>(result.Content.ReadAsStringAsync().Result);
+        }
+
+        public Terminals allterminals()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/all_terminals", api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<Terminals>(result.Content.ReadAsStringAsync().Result);
+        }
         //result.Content.ReadAsStringAsync().Result;
     }
 }

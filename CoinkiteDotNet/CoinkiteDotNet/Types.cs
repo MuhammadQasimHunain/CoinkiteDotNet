@@ -186,4 +186,48 @@ namespace CoinkiteDotNet
         public Paging paging { get; set; }
         public List<SentText> results {get; set;}
     }
+
+    public class Coin
+    {
+        public string address { get; set; }
+        public string coin_type { get; set; }
+        public string is_voucher { get; set; }
+    }
+
+    public class Voucher
+    {
+        public string CK_refnum { get; set; }
+        public string CK_type { get; set; }
+        public string amount { get; set; }
+        public string coin_type { get; set; }
+        public string claimed_at { get; set; }
+        public Coin coin { get; set; }
+        public string detail_page { get; set; }
+        public string pin_code { get; set; }
+        public string voucher_code { get; set; }
+        public string sent_messages { get; set; }
+    }
+
+    public class Vouchers
+    {
+        public Paging paging { get; set; }
+        public List<Voucher> results { get; set; }
+    }
+
+    public class Terminal
+    {
+        public string CK_refnum { get; set; }
+        public string CK_type { get; set; }
+        public string detail_page { get; set; }
+        public string guid { get; set; }
+        public string name { get; set; }
+        public string serial { get; set; }
+        public string is_wiped { get; set; }
+    }
+
+    public class Terminals
+    {
+        public Paging paging { get; set; }
+        public List<Terminal> results { get; set; }
+    }
 }
