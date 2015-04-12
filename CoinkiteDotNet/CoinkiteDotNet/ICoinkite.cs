@@ -22,5 +22,7 @@ namespace CoinkiteDotNet
         Vouchers vouchers();
         Terminals terminals();
         Terminals all_terminals();
+        Nyms nyms();
+        Nyms allnyms();
     }
 }

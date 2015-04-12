@@ -116,6 +116,20 @@ namespace CoinkiteDotNet
 
             return JsonConvert.DeserializeObject<Terminals>(result.Content.ReadAsStringAsync().Result);
         }
+
+        public Nyms nyms()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/active_nyms", api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<Nyms>(result.Content.ReadAsStringAsync().Result);
+        }
+
+        public Nyms allnyms()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/nyms", api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<Nyms>(result.Content.ReadAsStringAsync().Result);
+        }
         //result.Content.ReadAsStringAsync().Result;
     }
 }

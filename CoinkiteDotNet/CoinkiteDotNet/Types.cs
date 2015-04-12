@@ -230,4 +230,31 @@ namespace CoinkiteDotNet
         public Paging paging { get; set; }
         public List<Terminal> results { get; set; }
     }
+
+    public class Nym
+    {
+        public string CK_refnum { get; set; }
+        public string CK_type { get; set; }
+        public string profile_url { get; set; }
+        public string detail_url { get; set; }
+        public string display_name { get; set; }
+        public string nym_name { get; set; }
+        public string subtitle { get; set; }
+        public string email_md5 { get; set; }
+        public string image_url { get; set; }
+        public bool is_active { get; set; }
+        public bool is_searchable { get; set; }
+        public string message { get; set; }
+        public Dictionary<string, string> payments { get; set; }
+        public string twitter { get; set; }
+        public string updated_at { get; set; }
+        public string website { get; set; }
+        public int num_favs { get; set; }
+    }
+
+    public class Nyms
+    {
+        public Paging paging { get; set; }
+        public List<Nym> results { get; set; }
+    }
 }
