@@ -23,9 +23,14 @@ namespace CoinkiteDotNet
         {
             HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/self", api_key, api_secret);
 
-            MySelf myself = JsonConvert.DeserializeObject<MySelf>(result.Content.ReadAsStringAsync().Result);
+            return JsonConvert.DeserializeObject<MySelf>(result.Content.ReadAsStringAsync().Result);
+        }
 
-            return myself;
+        public ApiKeys apikeys()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/api_keys", api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<ApiKeys>(result.Content.ReadAsStringAsync().Result);
         }
     }
 }
