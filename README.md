@@ -1,6 +1,7 @@
 # CoinkiteDotNet
 .net library for coinkite
 
+Licensed under the DBAD license (Don't Be A Dick)
 
 Work has only just begun on this project, but it should be an ideal library for usage.
 
