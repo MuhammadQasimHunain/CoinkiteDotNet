@@ -47,6 +47,12 @@ namespace CoinkiteDotNet
             return JsonConvert.DeserializeObject<Accounts>(result.Content.ReadAsStringAsync().Result);
         }
 
+        public Cards cards()
+        {
+            HttpResponseMessage result = Requests.sendRequest(null, "/v1/my/cards", api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<Cards>(result.Content.ReadAsStringAsync().Result);
+        }
         //result.Content.ReadAsStringAsync().Result;
     }
 }

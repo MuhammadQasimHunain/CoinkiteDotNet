@@ -63,4 +63,27 @@ namespace CoinkiteDotNet
         public Paging paging { get; set; }
         public List<SubAccount> results { get; set; }
     }
+
+    public class QR
+    {
+        public string address { get; set; }
+        public string coin_type { get; set; }
+        public string is_card { get; set; }//will it work as a bool? we may never know
+    }
+
+    public class Card
+    {
+        public string CK_refnum { get; set; }
+        public string CK_type { get; set; }
+        public string is_locked { get; set; }//will these work as bool? Need a test card to find out
+        public string is_lost { get; set; } //as above, so below
+        public string number { get; set; }
+        public QR rear_qr { get; set; }
+    }
+
+    public class Cards
+    {
+        public Paging paging { get; set; }
+        public List<Card> results { get; set; }
+    }
 }
