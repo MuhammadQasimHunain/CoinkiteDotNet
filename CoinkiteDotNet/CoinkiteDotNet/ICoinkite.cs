@@ -21,8 +21,9 @@ namespace CoinkiteDotNet
         SentTexts sentsms();
         Vouchers vouchers();
         Terminals terminals();
-        Terminals all_terminals();
+        Terminals allterminals();
         Nyms nyms();
         Nyms allnyms();
+        Details getdetails(string CK_refnum);
     }
 }

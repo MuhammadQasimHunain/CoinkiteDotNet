@@ -130,6 +130,15 @@ namespace CoinkiteDotNet
 
             return JsonConvert.DeserializeObject<Nyms>(result.Content.ReadAsStringAsync().Result);
         }
+
+        public Details getdetails(string CK_refnum)
+        {
+            string url = "/v1/detail/" + CK_refnum;
+
+            HttpResponseMessage result = Requests.sendRequest(null, url, api_key, api_secret);
+
+            return JsonConvert.DeserializeObject<Details>(result.Content.ReadAsStringAsync().Result);
+        }
         //result.Content.ReadAsStringAsync().Result;
     }
 }

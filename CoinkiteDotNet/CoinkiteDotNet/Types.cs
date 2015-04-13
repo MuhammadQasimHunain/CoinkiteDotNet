@@ -257,4 +257,18 @@ namespace CoinkiteDotNet
         public Paging paging { get; set; }
         public List<Nym> results { get; set; }
     }
+
+    public class Detail
+    {
+        public string CK_refnum { get; set; }
+        public string CK_type { get; set; }
+        public string coin_type { get; set; }
+        public string created_at { get; set; }
+        public string detail_page { get; set; }
+    }
+
+    public class Details
+    {
+        public Detail detail { get; set; }
+    }
 }
