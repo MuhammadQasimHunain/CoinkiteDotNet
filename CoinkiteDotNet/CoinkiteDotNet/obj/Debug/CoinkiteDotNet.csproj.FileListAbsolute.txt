@@ -7,3 +7,6 @@ C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\b
 C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\obj\Debug\CoinkiteDotNet.csprojResolveAssemblyReference.cache
 C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\obj\Debug\CoinkiteDotNet.dll
 C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\obj\Debug\CoinkiteDotNet.pdb
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\HtmlAgilityPack.dll
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\HtmlAgilityPack.xml

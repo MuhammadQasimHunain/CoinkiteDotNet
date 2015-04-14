@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Windows.Forms;
+using System.Threading;
 
 
 namespace CoinkiteDotNet
@@ -48,27 +49,45 @@ namespace CoinkiteDotNet
 
         public static User registerUser()
         {
-            User toreturn = new User();
+            Uri test = new Uri("https://www.coinkite.com/signup");
+            HtmlDocument testdoc = runBrowserThread(test);
 
-            string csrf;
+            string tosend = "test";
 
-            WebBrowser webcontrol = new WebBrowser();
+            User user = new User();
 
-            webcontrol.AllowNavigation = true;
-            webcontrol.ScriptErrorsSuppressed = true;
-            webcontrol.Navigate("https://coinkite.com/signup");
-            webcontrol.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(webcontrol_DocumentCompleted);
+            user.apikey = tosend;
 
-            HtmlElementCollection forms = webcontrol.Document.GetElementById("csrf_token").GetElementsByTagName("value");
+            return user;
 
-            string tosend = forms[0].InnerText;
-            toreturn.apikey = tosend;
-            return toreturn;
+        }
+        public static HtmlDocument runBrowserThread(Uri url)
+        {
+            HtmlDocument value = null;
+            var th = new Thread(() =>
+            {
+                var br = new WebBrowser();
+                br.DocumentCompleted += browser_DocumentCompleted;
+                br.Navigate(url);
+                value = br.Document;
+                Application.Run();
+            });
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+            th.Join(8000); 
+            return value;
         }
 
-        private static void webcontrol_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        static void browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            
+            var br = sender as WebBrowser;
+            if (br.Url == e.Url)
+            {
+                Console.WriteLine("Natigated to {0}", e.Url);
+                Console.WriteLine(br.Document.Body.InnerHtml);
+                System.Console.ReadLine();
+                Application.ExitThread();   // Stops the thread
+            }
         }
         
     }
