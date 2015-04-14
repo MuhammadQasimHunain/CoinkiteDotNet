@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Windows.Forms;
-using System.Threading;
+using WatiN;
+using WatiN.Core;
+using System.Timers;
+
 
 
 namespace CoinkiteDotNet
@@ -49,8 +51,55 @@ namespace CoinkiteDotNet
 
         public static User registerUser()
         {
-            Uri test = new Uri("https://www.coinkite.com/signup");
-            HtmlDocument testdoc = runBrowserThread(test);
+            
+            using (var browser = new FireFox("https://www.coinkite.com/signup"))
+            {
+                browser.GoTo("https://coinkite.com/signup");
+                browser.WaitForComplete();
+                TextField username = browser.TextField(Find.ById("username"));
+                TextField password = browser.TextField(Find.ById("password"));
+                TextField password2 = browser.TextField(Find.ById("password2"));
+                CheckBox toc = browser.CheckBox(Find.ById("accept_toc"));
+                Button submit = browser.Button(Find.ByClass("btn btn-primary btn-large btn-block"));
+                username.Value = "amigo3133";
+                password.Value = "password";
+                password2.Value = "password";
+                toc.Click();
+                submit.Click();
+
+                System.Threading.Thread.Sleep(1500);
+
+                browser.WaitForComplete();
+                browser.GoTo("https://coinkite.com/welcome");
+                
+                browser.WaitUntilContainsText("Welcome");
+                Button allset = browser.Button(Find.ByClass("js-sjbutton btn btn-primary btn-large btn-block btn-start"));
+                allset.Click();
+                System.Threading.Thread.Sleep(400);
+                browser.GoToNoWait("https://coinkite.com/merchant/api");
+                System.Threading.Thread.Sleep(550);
+                Button createkey = browser.Button(Find.ByClass("js-sjmodal btn btn btn-primary"));
+                createkey.Click();
+
+                System.Threading.Thread.Sleep(300);
+
+                Button submitkey = browser.Button(Find.ByText("Make"));
+                submitkey.Click();
+
+                browser.CheckBox(Find.ById("cap_recv")).Click();
+                browser.CheckBox(Find.ById("cap_send")).Click();
+                browser.CheckBox(Find.ById("cap_send2")).Click();
+                browser.CheckBox(Find.ById("cap_xfer")).Click();
+                browser.CheckBox(Find.ById("cap_term")).Click();
+                browser.CheckBox(Find.ById("cap_events")).Click();
+                browser.CheckBox(Find.ById("cap_acct")).Click();
+                browser.CheckBox(Find.ById("cap_cosign")).Click();
+
+                browser.Button(Find.ByClass("btn btn-large btn-primary")).Click();
+                System.Threading.Thread.Sleep(1500);
+                browser.GoTo("https://coinkite.com/logout");
+                System.Threading.Thread.Sleep(300);
+            }
 
             string tosend = "test";
 
@@ -61,34 +110,12 @@ namespace CoinkiteDotNet
             return user;
 
         }
-        public static HtmlDocument runBrowserThread(Uri url)
+
+        public static void TimerElapsed(object sender, ElapsedEventArgs e)
         {
-            HtmlDocument value = null;
-            var th = new Thread(() =>
-            {
-                var br = new WebBrowser();
-                br.DocumentCompleted += browser_DocumentCompleted;
-                br.Navigate(url);
-                value = br.Document;
-                Application.Run();
-            });
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-            th.Join(8000); 
-            return value;
+            Console.WriteLine("timer");
         }
 
-        static void browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            var br = sender as WebBrowser;
-            if (br.Url == e.Url)
-            {
-                Console.WriteLine("Natigated to {0}", e.Url);
-                Console.WriteLine(br.Document.Body.InnerHtml);
-                System.Console.ReadLine();
-                Application.ExitThread();   // Stops the thread
-            }
-        }
         
     }
 }

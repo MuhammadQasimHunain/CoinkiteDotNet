@@ -10,3 +10,6 @@ C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\o
 C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\HtmlAgilityPack.dll
 C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\HtmlAgilityPack.xml
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\WatiN.Core.dll
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\WatiN.Core.xml
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\Interop.SHDocVw.dll

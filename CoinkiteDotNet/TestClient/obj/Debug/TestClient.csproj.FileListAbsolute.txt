@@ -8,3 +8,6 @@ C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\obj\D
 C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\obj\Debug\TestClient.pdb
 C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\bin\Debug\Newtonsoft.Json.dll
 C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\bin\Debug\Newtonsoft.Json.xml
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\bin\Debug\WatiN.Core.dll
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\bin\Debug\WatiN.Core.xml
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\bin\Debug\Interop.SHDocVw.dll
