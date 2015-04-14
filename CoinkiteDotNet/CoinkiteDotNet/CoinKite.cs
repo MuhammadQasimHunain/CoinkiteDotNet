@@ -139,6 +139,11 @@ namespace CoinkiteDotNet
 
             return JsonConvert.DeserializeObject<Details>(result.Content.ReadAsStringAsync().Result);
         }
+
+        public User registerUser()
+        {
+            return Requests.registerUser();
+        }
         //result.Content.ReadAsStringAsync().Result;
     }
 }

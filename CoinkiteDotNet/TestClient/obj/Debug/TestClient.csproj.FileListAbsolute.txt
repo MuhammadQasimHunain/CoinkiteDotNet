@@ -1,0 +1,10 @@
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\bin\Debug\TestClient.exe.config
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\bin\Debug\TestClient.exe
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\bin\Debug\TestClient.pdb
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\bin\Debug\CoinkiteDotNet.dll
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\bin\Debug\CoinkiteDotNet.pdb
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\obj\Debug\TestClient.csprojResolveAssemblyReference.cache
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\obj\Debug\TestClient.exe
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\obj\Debug\TestClient.pdb
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\TestClient\bin\Debug\Newtonsoft.Json.xml

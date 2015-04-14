@@ -1,0 +1,9 @@
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\CoinkiteDotNet.dll
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\CoinkiteDotNet.pdb
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\Newtonsoft.Json.dll
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\Newtonsoft.Json.xml
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\obj\Debug\CoinkiteDotNet.csprojResolveAssemblyReference.cache
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\obj\Debug\CoinkiteDotNet.dll
+C:\Users\william\Documents\GitHub\CoinkiteDotNet\CoinkiteDotNet\CoinkiteDotNet\obj\Debug\CoinkiteDotNet.pdb

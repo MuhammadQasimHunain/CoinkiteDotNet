@@ -25,5 +25,6 @@ namespace CoinkiteDotNet
         Nyms nyms();
         Nyms allnyms();
         Details getdetails(string CK_refnum);
+        User registerUser();
     }
 }

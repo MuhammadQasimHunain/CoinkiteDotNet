@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Windows.Forms;
 
 
 namespace CoinkiteDotNet
@@ -42,6 +43,31 @@ namespace CoinkiteDotNet
                     
             }
             
+            
+        }
+
+        public static User registerUser()
+        {
+            User toreturn = new User();
+
+            string csrf;
+
+            WebBrowser webcontrol = new WebBrowser();
+
+            webcontrol.AllowNavigation = true;
+            webcontrol.ScriptErrorsSuppressed = true;
+            webcontrol.Navigate("https://coinkite.com/signup");
+            webcontrol.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(webcontrol_DocumentCompleted);
+
+            HtmlElementCollection forms = webcontrol.Document.GetElementById("csrf_token").GetElementsByTagName("value");
+
+            string tosend = forms[0].InnerText;
+            toreturn.apikey = tosend;
+            return toreturn;
+        }
+
+        private static void webcontrol_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
             
         }
         

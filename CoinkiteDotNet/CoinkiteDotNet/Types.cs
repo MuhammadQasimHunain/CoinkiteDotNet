@@ -12,6 +12,14 @@ namespace CoinkiteDotNet
         public string Data { get; set; }
     }
 
+    public class User
+    {
+        public string username { get; set; }
+        public string password { get; set; }
+        public string apikey { get; set; }
+        public string apisecret { get; set; }
+    }
+
     public class ApiKey
     {
         public string CK_refnum { get; set; }
